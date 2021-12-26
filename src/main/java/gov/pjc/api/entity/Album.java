@@ -20,6 +20,14 @@ public class Album implements Serializable {
     @JoinColumn(name = "artista_id")
     private Artista artista;
 
+    public Album(String nome, Artista artista) {
+        this.nome = nome;
+        this.artista = artista;
+    }
+
+    public Album() {
+    }
+
     public Integer getId() {
         return id;
     }

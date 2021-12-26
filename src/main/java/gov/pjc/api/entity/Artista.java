@@ -11,15 +11,22 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Artista implements Serializable{
-    
+public class Artista implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    
+
     @OneToMany(mappedBy = "artista")
     private List<Album> listAlbum = new ArrayList<>();
+
+    public Artista() {
+    }
+
+    public Artista(String nome) {
+        this.nome = nome;
+    }
 
     public Integer getId() {
         return id;
